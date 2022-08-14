@@ -1,0 +1,210 @@
+// Project made by Gambhir Sharma
+
+// Date 01-04-2022
+/*
+This CSS art is inspired from @inspirationslOgo/instagram
+Art by @codyabanks/instagram
+*/
+
+$primary-color: #9d644f;
+$secondary-color: #fff;
+$yellow-color: #ffd600;
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  @include flexCenter();
+  background: #303f9f;
+}
+.canvas {
+  height: 440px;
+  width: 400px;
+  background: $secondary-color;
+  position: relative;
+  @include flexCenter();
+  z-index: -2;
+}
+.head {
+  @include flexCenter();
+  height: 300px;
+  width: 400px;
+
+  position: absolute;
+  top: 5%;
+  .face {
+    height: 210px;
+    width: 210px;
+    background: $primary-color;
+    border: 3px solid;
+    border-radius: 50%;
+    position: relative;
+    &-hair-div {
+      position: absolute;
+      height: 210px;
+      width: 210px;
+      border-radius: 50%;
+      left: -3px;
+      top: -3px;
+      overflow: hidden;
+      .face-hair {
+        height: 210px;
+        width: 500px;
+        border-radius: 60%;
+        position: relative;
+        background-color: #202020;
+        bottom: 50%;
+      }
+    }
+    .nose {
+      z-index: 4;
+      height: 25px;
+      width: 25px;
+      border: 3px solid;
+      border-radius: 50%;
+      background-color: $primary-color;
+      position: relative;
+      top: 50%;
+      left: 30%;
+      &::after {
+        content: " ";
+        display: block;
+        position: absolute;
+        height: 10px;
+        width: 10px;
+        background-color: $primary-color;
+        right: -4px;
+        top: 40%;
+      }
+    }
+    .mouth {
+      position: relative;
+      height: 20px;
+      width: 40px;
+      top: 55%;
+      left: 30%;
+      overflow: hidden;
+      transform: rotate(-20deg);
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        border: 3px solid;
+        border-radius: 50%;
+        bottom: 0;
+        left: -54%;
+      }
+    }
+  }
+  .glass {
+    top: 32%;
+    position: absolute;
+    height: 80px;
+    width: 230px;
+    @include flexCenter();
+    justify-content: left;
+    .frame {
+      position: absolute;
+      height: 10px;
+      width: 90px;
+      background-color: $yellow-color;
+      right: 0;
+      transform: rotate(5deg);
+    }
+    .lens {
+      @include flexCenter();
+      position: relative;
+      height: 90px;
+      width: 90px;
+      border: solid;
+      border-radius: 50%;
+      margin-right: 4px;
+      background-color: $primary-color;
+      -webkit-box-shadow: 5px -1px 0px 0.4px $yellow-color,
+        5px -1px 1px 4px #000;
+      overflow: hidden;
+      .eye {
+        position: absolute;
+        height: 20px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: #202020;
+      }
+      &-shade {
+        transform: rotate(20deg);
+        height: 100px;
+        width: 10px;
+        background-color: $secondary-color;
+        margin: 5px;
+        &:first-child {
+          width: 20px;
+        }
+      }
+    }
+  }
+  .hair {
+    .hair-bundle {
+      position: absolute;
+      height: 100px;
+      width: 100px;
+      background-color: #202020;
+      border-radius: 50%;
+      top: 0;
+      left: 50%;
+      z-index: -1;
+    }
+  }
+  .ear {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    right: 70px;
+    border-radius: 50%;
+    border: 3px solid;
+    background-color: $primary-color;
+  }
+  .neck-section {
+    position: absolute;
+    bottom: 20px;
+    height: 30px;
+    width: 30px;
+    background-color: $primary-color;
+  }
+}
+.neck {
+  height: 120px;
+  width: 50px;
+  border: solid;
+  background-color: $primary-color;
+}
+.cloth {
+  position: absolute;
+  top: 66%;
+  .cloth-neck {
+    height: 50px;
+    width: 100px;
+    background-color: #ba68c8;
+    border-radius: 20px 20px 0px 0px;
+    border: 3px solid;
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      left: 32%;
+      height: 20px;
+      width: 25px;
+      border-left: 3px solid;
+      border-right: 3px solid;
+    }
+  }
+}
