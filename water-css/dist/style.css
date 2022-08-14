@@ -1,0 +1,60 @@
+/*Some special CSS properties use in this project are:
+1.   -webkit-text-fill-color
+2.   -webkit-background-clip
+3.   -webkit-text-stroke
+*/
+/*
+Tested on Brave and Chrome
+This might not work on other browser like firefox, edge, Opera etc
+*/
+/*
+ 1. First I made a Paragraph element with text Water
+ 2. Now the concept is the we make the text transparent and add a svg image of wave.
+ 3. On hover a animation run which moves the wave from left to right.
+ And, Done!!
+*/
+html * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #202020;
+  color: #202020;
+}
+body p {
+  font-size: 7em;
+  font-family: arial;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  transition: 3s;
+  transition-delay: 2s;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88.7'%3E%3Cpath d='M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z' fill='%23003F7C'/%3E%3C/svg%3E");
+  background-size: 200% 200%;
+  background-position-y: 50%;
+  background-position-x: -200%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px darkgrey;
+}
+body p:hover {
+  -webkit-text-fill-color: transparent;
+  animation: wave 2.5s linear infinite;
+  -webkit-text-stroke: 1.2px darkgrey;
+  cursor: pointer;
+}
+
+@keyframes wave {
+  0% {
+    background-position-x: -500px;
+  }
+  100% {
+    background-position-x: 500px;
+  }
+}
