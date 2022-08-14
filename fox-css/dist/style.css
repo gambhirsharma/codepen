@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.canvas {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  transform: translate(0px, -25px);
+}
+.canvas::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 450px;
+  width: 450px;
+  border: 2px solid #202020;
+  transform: translate(0px, -25px);
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.head {
+  position: absolute;
+  z-index: 2;
+  transform: translate(-15px, 15px);
+}
+.head-main {
+  position: absolute;
+  top: 15px;
+  height: 160px;
+  width: 160px;
+  clip-path: polygon(50% 0, 90% 24%, 100% 42%, 51% 100%, 0 44%, 10% 24%);
+  background: #f08b14;
+}
+.head-main::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 160px;
+  width: 160px;
+  background: #e65100;
+  clip-path: polygon(100% 0, 50% 100%, 100% 100%);
+}
+.head-main::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 160px;
+  width: 160px;
+  background: #e65100;
+  clip-path: polygon(0 0, 0% 100%, 51% 100%);
+}
+.head .ears {
+  position: absolute;
+  height: 50px;
+  width: 160px;
+}
+.head .ears::before {
+  content: "";
+  display: flex;
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  background: #e65100;
+  clip-path: polygon(85% 0, 0 50%, 50% 100%);
+  right: 0;
+}
+.head .ears::after {
+  content: "";
+  display: flex;
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  background: #e65100;
+  clip-path: polygon(15% 0, 50% 100%, 100% 50%);
+}
+
+.body {
+  position: absolute;
+  bottom: 0px;
+}
+.body-main {
+  height: 250px;
+  width: 250px;
+  background: #f08b14;
+  clip-path: polygon(52% 0%, 98% 0%, 78% 100%, 22% 100%);
+}
+.body-main .legs {
+  position: absolute;
+  bottom: 0;
+  right: -25px;
+  height: 200px;
+  width: 200px;
+  clip-path: polygon(50% 24%, 80% 0, 60% 100%, 40% 100%, 20% 0);
+  background: #e65100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body-main .legs::after {
+  content: "";
+  height: 200px;
+  width: 2px;
+  background: #f08b14;
+}
+.tail {
+  position: absolute;
+  bottom: 0;
+  left: 31px;
+}
+.tail-main {
+  clip-path: polygon(0 0, 50% 0, 100% 100%, 0 50%);
+  background: #f08b14;
+  height: 100px;
+  width: 100px;
+}
+.tail-main::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background: #e65100;
+  clip-path: polygon(100% 0, 0 0, 0 100%);
+}
+section {
+  transform: translate(0px, 25px);
+  font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+  font-family: arial;
+  font-weight: 800;
+  font-size: 3.5em;
+  font-style: normal;
+}
+section i {
+  text-transform: uppercase;
+  position: relative;
+  color: #f08b14;
+  text-shadow: 0 3px #e65100, 0 5px #e65100, 0 7px #e65100;
+}
