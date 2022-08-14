@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*:after,
+*:before {
+  content: "";
+  position: absolute;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a2a72;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+}
+.canvas {
+  height: 80vmin;
+  width: 80vmin;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 4vmin;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.canvas:hover {
+  transform: scale(1.01);
+}
+.body {
+  height: 60vmin;
+  width: 45vmin;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.body:after {
+  height: 30vmin;
+  width: 30vmin;
+  background: #fff;
+  bottom: 2%;
+  border-radius: 53% 47% 50% 50% / 50% 50% 50% 50%;
+}
+.wings {
+  position: absolute;
+  top: 42%;
+  height: 30vmin;
+  width: 50vmin;
+  display: flex;
+  justify-content: space-between;
+}
+.wings i {
+  display: block;
+  height: 30vmin;
+  width: 10vmin;
+  background: #000;
+  border-radius: 50%;
+  /*   border: solid red; */
+}
+.eyes {
+  top: 22%;
+  position: absolute;
+  width: 30vmin;
+  height: 14vmin;
+  display: flex;
+  justify-content: space-between;
+}
+.eyes i {
+  display: flex;
+  height: 14vmin;
+  width: 14vmin;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.eyes i:before {
+  height: 8vmin;
+  width: 8vmin;
+  background: #000;
+  border-radius: 50%;
+}
+.eyes i:after {
+  height: 3vmin;
+  width: 4vmin;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(1vmin, -1vmin) rotate(40deg);
+}
+.nose {
+  position: absolute;
+  height: 18vmin;
+  width: 12vmin;
+  /*   border: solid red; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.nose i {
+  display: flex;
+  height: 15vmin;
+  width: 8vmin;
+  background: orange;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+.legs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  height: 10vmin;
+  width: 30vmin;
+  /*   border: solid red; */
+  bottom: 5vmin;
+}
+.legs i {
+  display: flex;
+  height: 7vmin;
+  width: 12vmin;
+  background: orange;
+}
+.legs i:nth-child(1) {
+  border-radius: 10vmin 0vmin 2vmin 0vmin;
+}
+.legs i:nth-child(2) {
+  border-radius: 0vmin 10vmin 0vmin 2vmin;
+}
