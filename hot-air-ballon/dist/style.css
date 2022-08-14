@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: #202020;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas {
+  position: relative;
+  height: 600px;
+  width: 600px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.canvas span:nth-child(1) {
+  top: 100px;
+}
+
+.center {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  border: 10px solid #e57373;
+  border-radius: 50%;
+  border-left: 0px solid;
+  transform: rotate(45deg);
+  background-image: linear-gradient(100deg, #bbdefb, #64b5f6, #1976d2);
+}
+.center .mountain-div {
+  position: relative;
+  top: 10px;
+  right: -20px;
+  height: 400px;
+  width: 300px;
+  transform: rotate(-45deg);
+}
+.center .mountain-div .mountain {
+  position: absolute;
+  bottom: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 180px solid #7ac1e4;
+  z-index: 1;
+}
+.center .mountain-div .mountain-cap-1,
+.center .mountain-div .mountain-cap-2,
+.center .mountain-div .mountain-cap-3 {
+  position: absolute;
+  top: 70px;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 25px solid #ceeaf6;
+}
+.center .mountain-div .mountain-cap-1 {
+  left: -55px;
+}
+.center .mountain-div .mountain-cap-2 {
+  left: -25px;
+}
+.center .mountain-div .mountain-cap-3 {
+  left: 5px;
+}
+.center .mountain-div .mountain-top {
+  position: absolute;
+  right: -65px;
+  border-left: 65px solid transparent;
+  border-right: 65px solid transparent;
+  border-bottom: 77px solid #ceeaf6;
+  z-index: 2;
+}
+
+.ballon {
+  height: auto;
+  width: auto;
+  position: absolute;
+  background: red;
+  top: 131.5789473684px;
+  left: 166.6666666667px;
+}
+.ballon-container {
+  position: relative;
+}
+.ballon-container .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+  position: absolute;
+  top: -2px;
+  min-height: 7em;
+  min-width: 7em;
+  border-radius: 150%;
+  border-top-left-radius: 425%;
+  border-bottom-right-radius: 425%;
+  border-top-right-radius: 425%;
+  background: #ff7043;
+  transform: rotate(-45deg);
+  z-index: 2;
+  overflow: hidden;
+}
+.ballon-container .circle .strip {
+  position: absolute;
+  top: 32%;
+  transform: rotate(45deg);
+  height: 40px;
+  width: 120px;
+  background: #388e3c;
+}
+.ballon-container .circle .stroke {
+  border-radius: 10px;
+  position: absolute;
+  left: -10px;
+  top: 50px;
+  height: 5px;
+  width: 50px;
+  background: black;
+  transform: rotate(45deg);
+}
+.ballon-container .circle div:nth-child(2) {
+  top: 50px;
+  right: 0px;
+}
+.ballon-container .circle div:nth-child(3) {
+  top: 30px;
+  right: 5px;
+}
+.ballon-container .circle div:nth-child(4) {
+  top: 0px;
+}
+.ballon-container .connector {
+  position: absolute;
+  display: inline-block;
+  top: 7.8em;
+  left: 2.2em;
+  min-height: 2.5em;
+  min-width: 2.5em;
+  border-radius: 50%;
+  border-bottom-left-radius: 52%;
+  border-bottom-right-radius: 72%;
+  border-top-left-radius: 72%;
+  border-top-right-radius: 420%;
+  border: 2px solid #d2691e;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-225deg);
+  z-index: 1;
+}
+.ballon-container .box {
+  position: absolute;
+  display: inline-block;
+  height: 40px;
+  width: 60px;
+  border-radius: 10px;
+  background-color: #4e342e;
+  transform: rotate(0deg);
+  top: 8.8em;
+  left: 1.5em;
+  z-index: 2;
+}
