@@ -1,0 +1,235 @@
+html * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: #202020;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .canvas {
+  position: relative;
+  height: 500px;
+  width: 550px;
+  z-index: -2;
+  overflow: hidden;
+  background-color: skyblue;
+}
+body .canvas .wheel {
+  position: absolute;
+  width: 550px;
+  height: 300px;
+  bottom: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0px 15px;
+}
+body .canvas .wheel-front, body .canvas .wheel-back {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 8px solid #202020;
+  animation: wheel 4s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .canvas .wheel-front .spoke, body .canvas .wheel-back .spoke {
+  height: 170px;
+  width: 3px;
+  position: absolute;
+  background-color: #202020;
+}
+body .canvas .wheel-front .spoke:nth-child(1), body .canvas .wheel-back .spoke:nth-child(1) {
+  transform: rotate(45deg);
+}
+body .canvas .wheel-front .spoke:nth-child(2), body .canvas .wheel-back .spoke:nth-child(2) {
+  transform: rotate(90deg);
+}
+body .canvas .wheel-front .spoke:nth-child(3), body .canvas .wheel-back .spoke:nth-child(3) {
+  transform: rotate(135deg);
+}
+body .canvas .wheel-front .spoke:nth-child(4), body .canvas .wheel-back .spoke:nth-child(4) {
+  transform: rotate(180deg);
+}
+body .canvas .wheel-front::after, body .canvas .wheel-back::after {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: orange;
+  z-index: 1000;
+}
+body .canvas .mainbody {
+  height: 300px;
+  width: 380px;
+  position: absolute;
+  left: 85px;
+  top: 90px;
+}
+body .canvas .mainbody .seat-handel {
+  position: absolute;
+  left: 75px;
+  top: 50px;
+  width: 250px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 15px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+body .canvas .mainbody .seat-handel .seat {
+  position: relative;
+  width: 60px;
+  height: 20px;
+  background-color: #202020;
+  bottom: 7px;
+  left: 10px;
+  border-radius: 30px;
+}
+body .canvas .mainbody .seat-handel .seat::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 20px;
+  bottom: -10px;
+  z-index: 1;
+  width: 10px;
+  height: 25px;
+  background-color: #202020;
+}
+body .canvas .mainbody .seat-handel .handel {
+  position: relative;
+  bottom: 15px;
+  width: 60px;
+  height: 12px;
+  background-color: #202020;
+  transform: rotate(-10deg);
+}
+body .canvas .mainbody .seat-handel .handel::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  transform: rotate(90deg);
+  bottom: -10px;
+  right: 15px;
+  z-index: -2;
+  width: 30px;
+  height: 10px;
+  background-color: #202020;
+}
+body .canvas .frame {
+  background: orange;
+  position: absolute;
+}
+body .canvas .frame:first-child {
+  height: 10px;
+  width: 175px;
+  bottom: 100px;
+  left: -15px;
+  transform: rotate(-55deg);
+}
+body .canvas .frame:nth-child(2) {
+  height: 10px;
+  width: 165px;
+  bottom: 100px;
+  right: -28px;
+  transform: rotate(60deg);
+}
+body .canvas .frame:nth-child(3) {
+  height: 10px;
+  width: 180px;
+  bottom: 98px;
+  left: 140px;
+  transform: rotate(-55deg);
+}
+body .canvas .frame:nth-child(4) {
+  height: 10px;
+  width: 170px;
+  bottom: 170px;
+  left: 120px;
+  transform: rotate(0deg);
+}
+body .canvas .frame:nth-child(5) {
+  height: 10px;
+  width: 170px;
+  bottom: 90px;
+  left: 70px;
+  transform: rotate(70deg);
+}
+body .chain {
+  position: absolute;
+  width: 210px;
+  height: 70px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .chain-cover {
+  position: absolute;
+  background: #202020;
+  height: 60px;
+  width: 175px;
+  z-index: -1;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 62%, 0 39%);
+  clip-path: polygon(100% 0, 100% 100%, 0 62%, 0 39%);
+}
+body .chain-box {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: #808080;
+  border-radius: 50%;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: wheel 4s linear infinite;
+}
+body .chain-box .padel {
+  width: 5px;
+  height: 40px;
+  background: #000;
+  position: absolute;
+  left: 5px;
+  transform: rotate(90deg);
+  display: flex;
+}
+body .chain-box .padel::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: 30px;
+  width: 6px;
+  background: #808080;
+  transform: rotate(90deg);
+  bottom: -15px;
+  animation: paddel 1s linear infinite;
+}
+
+@keyframes wheel {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes padde {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}

@@ -1,0 +1,259 @@
+// Made by Gambhrir Sharma
+$primary: orange;
+$black: #000;
+$dark: #202020;
+$white: #fff;
+$sky: skyblue;
+
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: $dark;
+  @include flexCenter();
+
+  .canvas {
+    position: relative;
+    height: 500px;
+    width: 550px;
+    z-index: -2;
+    overflow: hidden;
+    background-color: $sky;
+    //     start with wheel
+    .wheel {
+      position: absolute;
+      width: 550px;
+      height: 300px;
+      // border: solid $white;
+      bottom: 50px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0px 15px;
+
+      //      Per wheel
+      &-front {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 8px solid $dark;
+        animation: wheel 4s linear infinite;
+        @include flexCenter();
+        .spoke {
+          height: 170px;
+          width: 3px;
+          position: absolute;
+          // background: linear-gradient(90deg, #202020, #808080 );
+          background-color: $dark;
+          &:nth-child(1) {
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            transform: rotate(90deg);
+          }
+          &:nth-child(3) {
+            transform: rotate(135deg);
+          }
+          &:nth-child(4) {
+            transform: rotate(180deg);
+          }
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          border-radius: 50%;
+
+          width: 40px;
+          height: 40px;
+          background: $primary;
+          z-index: 1000;
+        }
+      }
+
+      &-back {
+        @extend .wheel-front;
+      }
+    }
+    //     main frame start here!!
+    .mainbody {
+      height: 300px;
+      width: 380px;
+      // border: 2px solid $white;
+      position: absolute;
+      left: 85px;
+      top: 90px;
+
+      // for seat and handel
+      .seat-handel {
+        position: absolute;
+        left: 75px;
+        top: 50px;
+        width: 250px;
+        height: 70px;
+        //  border: solid $white;
+        @include flexCenter();
+        padding: 0px 15px;
+        align-items: flex-end;
+        justify-content: space-between;
+        .seat {
+          position: relative;
+          width: 60px;
+          height: 20px;
+          background-color: $dark;
+          bottom: 7px;
+          left: 10px;
+          border-radius: 30px;
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            left: 20px;
+            bottom: -10px;
+            z-index: 1;
+            width: 10px;
+            height: 25px;
+            background-color: $dark;
+          }
+        }
+        .handel {
+          position: relative;
+          bottom: 15px;
+          width: 60px;
+          height: 12px;
+          background-color: $dark;
+          transform: rotate(-10deg);
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            transform: rotate(90deg);
+            bottom: -10px;
+            right: 15px;
+            z-index: -2;
+            width: 30px;
+            height: 10px;
+            background-color: $dark;
+          }
+        }
+      }
+    }
+    .frame {
+      background: $primary;
+      position: absolute;
+
+      &:first-child {
+        height: 10px;
+        width: 175px;
+        bottom: 100px;
+        left: -15px;
+        transform: rotate(-55deg);
+      }
+      &:nth-child(2) {
+        height: 10px;
+        width: 165px;
+        bottom: 100px;
+        right: -28px;
+        transform: rotate(60deg);
+      }
+      &:nth-child(3) {
+        height: 10px;
+        width: 180px;
+        bottom: 98px;
+        left: 140px;
+        transform: rotate(-55deg);
+      }
+      &:nth-child(4) {
+        height: 10px;
+        width: 170px;
+        bottom: 170px;
+        left: 120px;
+        transform: rotate(0deg);
+      }
+      &:nth-child(5) {
+        height: 10px;
+        width: 170px;
+        bottom: 90px;
+        left: 70px;
+        transform: rotate(70deg);
+      }
+    }
+  }
+  //     chain box part
+  .chain {
+    position: absolute;
+    width: 210px;
+    height: 70px;
+    bottom: 0;
+
+    @include flexCenter;
+    &-cover {
+      position: absolute;
+      background: $dark;
+      height: 60px;
+      width: 175px;
+      z-index: -1;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 62%, 0 39%);
+      clip-path: polygon(100% 0, 100% 100%, 0 62%, 0 39%);
+    }
+    &-box {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      background: #808080;
+      border-radius: 50%;
+      right: 0;
+      @include flexCenter();
+      animation: wheel 4s linear infinite;
+      .padel {
+        width: 5px;
+        height: 40px;
+        background: $black;
+        position: absolute;
+        left: 5px;
+        transform: rotate(90deg);
+        display: flex;
+
+        &::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          height: 30px;
+          width: 6px;
+          background: #808080;
+          transform: rotate(90deg);
+          bottom: -15px;
+          animation: paddel 1s linear infinite;
+        }
+      }
+    }
+  }
+}
+
+// all animation part are written below it
+@keyframes wheel {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes padde {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
