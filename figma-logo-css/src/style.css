@@ -1,0 +1,93 @@
+/* Made by @gambhirsharma on 12 August 2022 
+
+#######  Concepts used   ########
+ - Css variables
+ - Flexbox
+ - Grid
+ - Custom border-radius
+ - Used Vmin in place of PX.
+
+####### Tested on   #########
+- Firefox (windows 10 & Ubuntu)
+- Brave (Windows 10)
+- Edge (Windows)
+
+#######  Follow me  #########
+twitter 
+https://www.twitter.com/gambhir_sharma/
+*/
+
+*,
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* color var */
+--black: #000;
+--white: #fff;
+  
+  --first:#F24D18 ;
+  --second:#FF7362 ;
+  --third:#A359FF ;
+  --fourth: #13BDFE;
+  --fifth: #02D084;
+  --sixth: ;
+}
+*::after,
+*::before {
+  content: "";
+  display: flex;
+  position: absolute;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--black);
+}
+.canvas {
+  height: 80vmin;
+  width: 80vmin;
+  background: var(--white);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4vmin;
+}
+div{
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+}
+i{
+  height: 20vmin;
+  width: 20vmin; 
+  background: red;
+}
+ i:nth-child(1){
+  background: var(--first);
+   border-radius: 50% 0 0 50%;
+}
+i:nth-child(2){
+    background: var(--second);
+  border-radius: 0% 50% 50% 0%;
+}
+ i:nth-child(3){
+   background: var(--third);
+   border-radius: 50% 0 0 50%;
+}
+i:nth-child(4){
+   background: var(--fourth);
+  border-radius: 50%;
+}
+ i:nth-child(5){
+   background: var(--fifth);
+   border-radius: 50% 0 50% 50%;
+}
+i:nth-child(6){
+  background: var(--sixth);
+}
