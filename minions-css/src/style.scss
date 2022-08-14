@@ -1,0 +1,362 @@
+// variables
+$dark: #202020;
+$light: #fff;
+// yellow
+$yellow: #ffda66;
+$yellow-dark: #ffb266;
+// blue
+$blue: #849ed8;
+$blue-dark: #667eb2;
+$blue-shadow: #5c80c7;
+// grey
+$grey: #bdc9e5;
+$grey-dark: #8290ac;
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+}
+body {
+  height: 100vh;
+  @include flexCenter();
+  // background: $dark;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}
+.canvas {
+  // height: 600px;
+  // width: 850px;
+  padding: 5vmin;
+  background: $light;
+  @include flexCenter();
+  border-radius: 2vmin;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+section {
+  position: relative;
+  // height: 300px;
+  // width: 220px;
+  height: 60vmin;
+  width: 40vmin;
+  margin: 0px 20px;
+  // border: solid;
+  @include flexCenter();
+}
+
+section:nth-child(1) {
+  $h: 40vmin;
+  $w: 24vmin;
+  .main {
+    z-index: 2;
+    position: relative;
+    min-height: $h;
+    width: $w;
+    background-color: $yellow;
+    border-radius: 50vmin 50vmin 30vmin 30vmin;
+    overflow: hidden;
+  }
+  .cloth {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    background-color: $blue;
+    bottom: 0;
+    left: 0;
+
+    &::after,
+    &::before {
+      z-index: 3;
+      height: 1.8vmin;
+      width: 1.8vmin;
+      background: $dark;
+      border-radius: 50%;
+      top: 5%;
+    }
+    &::after {
+      left: 20%;
+    }
+    &::before {
+      right: 20%;
+    }
+    .pocket {
+      position: absolute;
+      height: 5vmin;
+      width: 5vmin;
+      background-color: $blue-dark;
+      top: 25%;
+      left: 40%;
+      border-radius: 0px 0px 5vmin 5vmin;
+    }
+    i {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      height: 70%;
+      width: 15%;
+      background-color: $yellow;
+      overflow: hidden;
+      border-radius: 0px 0px 20px 0px;
+    }
+    p {
+      display: inline-block;
+      position: absolute;
+      height: 22px;
+      width: 100%;
+      background-color: $blue-dark;
+      bottom: 0;
+    }
+    i:nth-child(1) {
+      left: 0;
+      border-radius: 0px 0px 20px 0px;
+
+      // its not working 👆
+    }
+    i:nth-child(2) {
+      right: 0;
+      border-radius: 0px 0px 0px 20px;
+    }
+  }
+  // strip for cloth
+  .strip {
+    position: absolute;
+    height: 2vmin;
+    width: 10vmin;
+    background-color: $blue;
+    z-index: 2;
+    top: 51%;
+
+    &:nth-child(1) {
+      transform: rotate(45deg);
+      left: -2.5vmin;
+      box-shadow: -2vmin 0.5vmin 0vmin $yellow-dark;
+    }
+    &:nth-child(2) {
+      right: -2.5vmin;
+      transform: rotate(-45deg);
+      box-shadow: 2vmin 0.5vmin 0vmin $yellow-dark;
+    }
+  }
+  .mouth {
+    position: absolute;
+    right: 25%;
+    top: 40%;
+    &::after {
+      top: -1vmin;
+      left: -3vmin;
+      transform: rotate(-20deg);
+      // height: 40px;
+      // width: 80px;
+      height: 5vmin;
+      width: 10vmin;
+      background-color: $yellow;
+    }
+    .inside {
+      position: relative;
+      overflow: hidden;
+      // height: 60px;
+      // width: 60px;
+      height: 7vmin;
+      width: 7.5vmin;
+      background-color: $dark;
+      border-radius: 50%;
+      transform: rotate(0deg);
+      .teeth {
+        position: absolute;
+        height: 50%;
+        width: 100%;
+        top: 1.1vmin;
+        $h: 3vmin;
+        $w: 3vmin;
+        &:after {
+          left: 30%;
+          bottom: 0;
+          // height: 25px;
+          // width: 25px;
+          height: $h;
+          width: $w;
+          background-color: $light;
+          border-radius: 0px 0px 2vmin 2vmin;
+          transform: rotate(3.1deg);
+        }
+        &::before {
+          right: -10%;
+          bottom: 0;
+          // height: 25px;
+          // width: 25px;
+          height: $h;
+          width: $w;
+          background-color: $light;
+          border-radius: 0px 0px 1vmin 1vmin;
+          transform: rotate(-3.1deg);
+        }
+      }
+    }
+  }
+  .eye {
+    position: absolute;
+    top: 18%;
+    width: 100%;
+    height: 8vmin;
+
+    @include flexCenter();
+    .lens-strip {
+      position: absolute;
+      width: 100%;
+      height: 4vmin;
+      background: $dark;
+      box-shadow: 0vmin 0.6vmin 0px $yellow-dark;
+      @include flexCenter();
+      flex-direction: column;
+      i {
+        display: inline-block;
+        height: 0.6vmin;
+        width: 13.5vmin;
+        background-color: $grey-dark;
+        margin: 0.3vmin;
+      }
+      p {
+        position: absolute;
+        width: 15vmin;
+        height: 15vmin;
+        @include flexCenter();
+        span {
+          position: absolute;
+          height: 1.5vmin;
+          width: 14vmin;
+          background-color: $grey-dark;
+          border-radius: 0.4vmin;
+          &:nth-child(1) {
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            transform: rotate(140deg);
+          }
+          &:nth-child(3) {
+            transform: rotate(270deg);
+          }
+        }
+      }
+    }
+    .lens {
+      z-index: 2;
+      height: 12vmin;
+      width: 12vmin;
+      border-radius: 50%;
+      background: $light;
+      border: 2vmin solid $grey;
+      box-shadow: 0vmin 0.7vmin 0px $yellow-dark;
+      @include flexCenter();
+      box-shadow: inset 0vmin 0vmin 0vmin 0.5vmin $grey-dark;
+      .eye-ball {
+        position: relative;
+        height: 4vmin;
+        width: 4vmin;
+        border-radius: 50%;
+        background-color: $dark;
+        &:after {
+          height: 2vmin;
+          width: 2vmin;
+          border-radius: 50%;
+          background-color: $light;
+          right: 0;
+        }
+      }
+    }
+  }
+  .leg {
+    position: absolute;
+    width: 12vmin;
+    height: 5vmin;
+    background-color: $blue-dark;
+    top: 80%;
+    @include flexCenter();
+    align-items: flex-end;
+    z-index: 1;
+    &::after {
+      height: 3.5vmin;
+      width: 3vmin;
+      background-color: $light;
+      border-radius: 2vmin 2vmin 0px 0px;
+    }
+    &::before {
+      position: absolute;
+      width: 30vmin;
+      height: 2vmin;
+      background-color: $dark;
+      bottom: -4vmin;
+      border-radius: 50%;
+    }
+  }
+  .shoes {
+    position: absolute;
+    height: 2.5vmin;
+    width: 5vmin;
+    background-color: $dark;
+    bottom: -2.5vmin;
+
+    &:nth-child(1) {
+      left: -1vmin;
+      border-radius: 2vmin 0px 0px 0.2vmin;
+    }
+    &:nth-child(2) {
+      right: -1vmin;
+      border-radius: 0px 2vmin 0px 0.2vmin;
+    }
+  }
+  .hand {
+    position: absolute;
+    top: 50%;
+    width: 78%;
+    height: 12vmin;
+    @include flexCenter();
+    i {
+      position: absolute;
+      width: 16vmin;
+      height: 13vmin;
+      border-radius: 60%;
+      border: 2.5vmin solid $yellow;
+      &:nth-child(1) {
+        left: 0;
+        &::after {
+          position: a;
+          height: 3vmin;
+          width: 3vmin;
+          background-color: $dark;
+          bottom: -10px;
+          left: 0px;
+          transform: rotate(30deg);
+        }
+      }
+      &:nth-child(2) {
+        right: 0;
+        &::after {
+          position: a;
+          height: 3vmin;
+          width: 3vmin;
+          background-color: $dark;
+          bottom: -10px;
+          right: 0px;
+          transform: rotate(-30deg);
+        }
+      }
+    }
+  }
+  // for first
+}
