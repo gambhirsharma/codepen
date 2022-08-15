@@ -1,0 +1,102 @@
+*,:root{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box; 
+
+ --black: #000;
+ --white: #fff;
+
+ --shafron: #FF9933;
+ --green: #138808 ;
+}
+*::after,*::before{
+  position: absolute;
+  content: "";
+  display: block;
+}
+body{
+  height: 100vh;
+  background-color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.canvas{
+  width: 90vmin;
+  height: 60vmin;
+  background-color: var(--white);
+  position: relative;
+}
+.top{
+  position: relative;
+height: 20vmin;
+width: 100%;
+background-color: var(--shafron);
+transform: scaleX(0);
+transform-origin: left;
+animation: top 1s linear forwards;
+}
+.center{
+  position: relative;
+  width: 100%;
+  height: 20vmin;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+img{
+  width: 20vmin;
+  height: 20vmin;
+  opacity: 0;
+  z-index: 1;
+  animation: img .5s 2s linear forwards, spin 3.5s linear infinite;
+}
+.bottom{
+  position: relative;
+  width: 100%;
+  height: 20vmin;
+  background-color: var(--green);
+  transform: scaleX(0);
+  transform-origin: right;
+  animation: bottom 1s linear forwards;
+}
+
+@keyframes top {
+  from{
+    transform: scaleX(0);
+  }
+  to{
+    transform: scaleX(1);
+  }
+}
+@keyframes bottom {
+  from{
+    transform: scaleX(0);
+  }
+  to{
+    transform: scaleX(1);
+  }
+}
+@keyframes img {
+  from{
+    width: 30vmin;
+    height: 30vmin;
+    opacity: 0;
+    
+  }
+  to{
+    width: 20vmin;
+    width: 20vmin;
+    opacity: 1;
+  
+  }
+}
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
