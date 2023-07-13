@@ -1,0 +1,314 @@
+/* 
+Made by Gambhir Sharma 
+14^th October 2022
+
+#### Inspiration💫 ####
+- This Bus illustration is taken from Classmate's notebook Front page.
+ 
+#### Concept used #### 
+- Responsive Units (vmin)
+- Used Linear gradient to make boxes
+- Used Radial gradient to make circles
+- body::after,body::before
+
+#### Tested #### 
+- Firefox (Windows/Ubuntu)
+- Chrome  (windows/Ubuntu)
+- Brave
+- Edge
+
+Follow me on twitter for more
+https://www.twitter.com/gambhir_sharma/
+
+*/
+
+*,
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --orange: #ff9100;
+  --light-blue: #19a0b1;
+  --blue: #2e38a4;
+  --window-blue: #2980a3;
+  --grey: #37474f;
+  --light-grey: lightgrey;
+  --white: #fff;
+  --green: #88ff8e;
+  --black: #000;
+  --red: #ff0000;
+  /* --white: red; */
+  --blank: #ff000000;
+}
+*::after,
+*::before {
+  content: "";
+  display: flex;
+  position: absolute;
+}
+body {
+  height: 100vh;
+  /* the road */
+  --left-wheel-pos: 33.89% 46.8%;
+  --right-wheel-pos: 50.78% 46.8%;
+  background:
+ /* starts here */
+    /* ----------------------- all background elements   ------------------  */
+      /* hiding strips up*/ linear-gradient(
+        var(--grey),
+        var(--grey)
+      )
+      5% 47% / 100% 5vmin no-repeat,
+    /* hiding strips down*/ linear-gradient(var(--grey), var(--grey)) 5% 53% /
+      100% 5vmin no-repeat,
+    /* upper small line */ linear-gradient(var(--grey), var(--grey)) 5% 43% /
+      100% 1vmin no-repeat,
+    /* lower small line */ linear-gradient(var(--grey), var(--grey)) 5% 57% /
+      100% 1vmin no-repeat,
+    /* up background Orange */ linear-gradient(var(--orange), var(--orange)) 0%
+      0% / 100% 45% no-repeat,
+    /* down background Blue */
+      linear-gradient(var(--light-blue), var(--light-blue)) 100% 100% / 100% 45%
+      no-repeat,
+    /* strips */ linear-gradient(90deg, var(--white) 50%, var(--blank) 50%) 5%
+      22% / 12% 1vmin,
+    /* road back grey part */ linear-gradient(var(--grey), var(--grey)) 50% 50% /100%
+      15vmin no-repeat;
+  /* ends here */
+  animation: road 5s linear infinite reverse;
+}
+/* animation of road moving backward */
+@keyframes road {
+  0% {
+  }
+  100% {
+    background:
+ /* starts here */
+    /* ----------------------- all background elements   ------------------  */
+      /* hiding strips up*/ linear-gradient(
+          var(--grey),
+          var(--grey)
+        )
+        5% 47% / 100% 5vmin no-repeat,
+      /* hiding strips down*/ linear-gradient(var(--grey), var(--grey)) 5% 53% /
+        100% 5vmin no-repeat,
+      /* upper small line */ linear-gradient(var(--grey), var(--grey)) 5% 43% /
+        100% 1vmin no-repeat,
+      /* lower small line */ linear-gradient(var(--grey), var(--grey)) 5% 57% /
+        100% 1vmin no-repeat,
+      /* up background Orange */ linear-gradient(var(--orange), var(--orange))
+        0% 0% / 100% 45% no-repeat,
+      /* down background Blue */
+        linear-gradient(var(--light-blue), var(--light-blue)) 100% 100% / 100%
+        45% no-repeat,
+      /* strips */ linear-gradient(90deg, var(--white) 50%, var(--blank) 50%)
+        100% 22% / 12% 1vmin,
+      /* road back grey part */ linear-gradient(var(--grey), var(--grey)) 50%
+        50% /100% 15vmin no-repeat;
+    /* ends here */
+  }
+}
+ /*  ######### ######### ######### ######### ######### ######### ######### */
+body::before {
+  /* the bus */
+  --h: 17vmin;
+  --w: 60vmin;
+  --left-wheel-pos: 19% 93%;
+  --right-wheel-pos: 74% 93%;
+  top: 31%;
+  left: 28%;
+  width: var(--w);
+  height: var(--h);
+  /* border: solid; */
+  /* animation: bus 5s linear infinite; */
+  overflow: hidden;
+  border-radius: 0px 10vmin 2vmin 0vmin;
+  background: 
+    /* ------------ other bus elements ---------------  */ /* door */
+    linear-gradient(var(--light-grey) 50%, var(--light-grey) 50%) 45% 97% /
+    11% calc(var(--h) / 1.45) no-repeat,
+  linear-gradient(var(--blue) 50%, var(--blue) 50%) 45% 97% / 12%
+    calc(var(--h) / 1.4) no-repeat,
+  /* division between windows and front part */
+    linear-gradient(var(--window-blue) 50%, var(--window-blue) 50%) 90% 30% /
+    8% calc(var(--h) / 4) no-repeat,
+  linear-gradient(var(--blue) 50%, var(--blue) 50%) 100% 30% / 20%
+    calc(var(--h) / 4) no-repeat,
+  /* division between windows and back part */
+    linear-gradient(var(--blue) 50%, var(--blue) 50%) 0% 30% / 4%
+    calc(var(--h) / 4) no-repeat,
+  /* white bonnet part */
+    /* linear-gradient(var(--blue) 50%, var(--blue) 50%)
+    100% 90% / 8% calc(var(--h) / 50) no-repeat,
+
+  linear-gradient(var(--blue) 50%, var(--blue) 50%) 100% 80% / 6%
+    calc(var(--h) / 50) no-repeat,
+
+  linear-gradient(var(--blue) 50%, var(--blue) 50%) 100% 70% / 7%
+    calc(var(--h) / 50) no-repeat,
+     */
+    linear-gradient(var(--white) 50%, var(--white) 50%) 100% 100% / 7%
+    calc(var(--h) / 2.5) no-repeat,
+  /* window separator line */
+    linear-gradient(var(--blue) 50%, var(--blue) 50%) 15% 30% / 0.5%
+    calc(var(--h) / 4) no-repeat,
+  linear-gradient(var(--blue) 50%, var(--blue) 50%) 28% 30% / 0.5%
+    calc(var(--h) / 4) no-repeat,
+  linear-gradient(var(--blue) 50%, var(--blue) 50%) 45% 30% / 12%
+    calc(var(--h) / 4) no-repeat,
+  linear-gradient(var(--blue) 50%, var(--blue) 50%) 61.5% 30% / 0.5%
+    calc(var(--h) / 4) no-repeat,
+  linear-gradient(var(--blue) 50%, var(--blue) 50%) 72% 30% / 0.5%
+    calc(var(--h) / 4) no-repeat,
+
+
+    /* window */ linear-gradient(var(--window-blue) 50%, var(--window-blue) 50%)
+      0% 30% / 100% calc(var(--h) / 4) no-repeat,
+    /* blue stroke on green stripes */
+    linear-gradient(var(--blue) 50%, var(--blue) 50%) 10% 98% / 0.2%
+    calc(var(--h) / 2.5) no-repeat,
+  linear-gradient(var(--blue) 50%, var(--blue) 50%) 30% 98% / 0.2%
+    calc(var(--h) / 2.5) no-repeat,
+  linear-gradient(var(--blue) 50%, var(--blue) 50%) 60% 98% / 0.2%
+    calc(var(--h) / 2.5) no-repeat,
+  linear-gradient(var(--blue) 50%, var(--blue) 50%) 80% 98% / 0.2%
+    calc(var(--h) / 2.5) no-repeat,
+  /* top white stripe */ linear-gradient(var(--white) 50%, var(--white) 50%)
+  45% 0% / 100% calc(var(--h) / 10) no-repeat,
+  /* below top white blue strip */
+    linear-gradient(var(--blue) 50%, var(--blue) 50%) 45% 20% / 100%
+    calc(var(--h) / 2) no-repeat,
+    /* green strips on bus */ linear-gradient(
+        var(--green) 50%,
+        var(--blank) 50%
+      )
+      0% 80% / 100% calc(var(--h) / 4) repeat,
+    /* fore ground */ linear-gradient(var(--blue), var(--blue)) 50% 50% / 100%
+      20vmin no-repeat;
+      animation: bus linear .4s infinite;
+}
+
+@keyframes bus {
+  0%{}
+  100%{
+    top: 31.1%;
+    left: 28.1%;
+  }
+}
+
+
+
+
+body::after{
+  --h: 24vmin;
+  --w: 64vmin;
+  top: 29%;
+  left: 27%;
+  height: var(--h);
+  width: var(--w);
+  --left-wheel-pos: 19% 77%;
+  --right-wheel-pos: 74% 77%;
+ /* border: solid; */
+  background:
+/* extra white stuff on top */
+  linear-gradient(var(--white), var(--white)) 10vmin .4vmin /
+  15% 8% no-repeat,
+  linear-gradient(var(--white), var(--white)) 30vmin 1vmin /
+  10% 7% no-repeat,
+  linear-gradient(var(--white), var(--white)) 0vmin 1.88vmin /
+  4% 7.6% no-repeat,
+  /* front side mirror */
+  linear-gradient(var(--blue), var(--blue)) 57vmin 4vmin /
+  10% 4% no-repeat,
+  linear-gradient(var(--blue), var(--blue)) 61.4vmin 4vmin /
+  3% 12% no-repeat,
+
+   /* Adding wheel */
+ /* left wheel */ radial-gradient(
+  circle at var(--left-wheel-pos),
+  var(--black) 0%,
+  var(--black) 0.7vmin,
+  transparent 0%
+),
+radial-gradient(
+  circle at var(--left-wheel-pos),
+  var(--white) 0%,
+  var(--white) 1vmin,
+  transparent 0%
+),
+/* spoke part */
+  /* linear-gradient(45deg, transparent 40%, #eceddc 20% ) 19% 93%/6vmin 6vmin no-repeat, */
+  /* rest of wheel part */
+  radial-gradient(
+    circle at var(--left-wheel-pos),
+    var(--grey) 1.3vmin,
+    var(--black) 3vmin,
+    transparent 0%
+  ),
+radial-gradient(
+  circle at var(--left-wheel-pos),
+  var(--black) 0%,
+  var(--black) 3.5vmin,
+  transparent 0%
+),
+radial-gradient(
+  circle at var(--left-wheel-pos),
+  var(--white) 0%,
+  var(--white) 4vmin,
+  transparent 0%
+),
+radial-gradient(
+  circle at var(--left-wheel-pos),
+  var(--black) 0%,
+  var(--black) 5vmin,
+  transparent 0%
+),
+/* right wheel */
+  radial-gradient(
+    circle at var(--right-wheel-pos),
+    var(--black) 0%,
+    var(--black) 0.7vmin,
+    transparent 0%
+  ),
+radial-gradient(
+  circle at var(--right-wheel-pos),
+  var(--white) 0%,
+  var(--white) 1vmin,
+  transparent 0%
+),
+radial-gradient(
+  circle at var(--right-wheel-pos),
+  var(--grey) 1.3vmin,
+  var(--black) 3vmin,
+  transparent 0%
+),
+radial-gradient(
+  circle at var(--right-wheel-pos),
+  var(--black) 0%,
+  var(--black) 3.5vmin,
+  transparent 0%
+),
+radial-gradient(
+  circle at var(--right-wheel-pos),
+  var(--white) 0%,
+  var(--white) 4vmin,
+  transparent 0%
+),
+radial-gradient(
+  circle at var(--right-wheel-pos),
+  var(--black) 0%,
+  var(--black) 5vmin,
+  transparent 0%
+);
+animation: wheel linear .4s infinite;
+}
+
+@keyframes wheel {
+  0%{}
+  100%{
+    
+    top: 29.1%;
+    left: 27.1%;
+
+  }
+}
