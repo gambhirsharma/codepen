@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  --white: #fff;
+  --hair-grey: #fff;
+  --skin: #fedb8c;
+  --skin-shadow: #e6c57d;
+  --blue-glass: #7cc8e9;
+  --grey-spec: #746a75;
+  --canvas-size: 500px;
+}
+body {
+  background-color: #202020;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+main {
+  position: absolute;
+  height: var(--canvas-size);
+  width: var(--canvas-size);
+  /* background-color: var(--white); */
+}
+.head {
+  position: absolute;
+  background-color: var(--skin);
+  width: 20%;
+  height: 40%;
+  border-radius: calc(var(--canvas-size) / 10);
+  bottom: 30%;
+  left: 30%;
+  box-shadow: inset 10px 0px 0px var(--skin-shadow);
+  overflow: hidden;
+}
+.spec-stick {
+  position: absolute;
+  background-color: var(--grey-spec);
+  width: 50%;
+  height: 4px;
+  top: 50%;
+  left: 0;
+}
+.mouth {
+  position: absolute;
+  /* background-color: var(--skin-shadow); */
+  height: 18%;
+  width: 46%;
+  border-radius: 50%;
+  border: solid 4px var(--skin-shadow);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  top: 68%;
+  right: -8%;
+  transform: rotate(-20deg);
+}
+/* span is for hair */
+span {
+  position: absolute;
+  display: block;
+  background-color: var(--hair-grey);
+  width: 12%;
+  height: 6%;
+  border-radius: calc(var(--canvas-size) / 10);
+}
+main span:nth-child(1) {
+  left: 41%;
+  bottom: 54%;
+  /* z-index: 3; */
+}
+main span:nth-child(2) {
+  left: 42%;
+  bottom: 60%;
+}
+/*
+ span:nth-child(3)
+ its not working 
+*/
+main span:nth-child(6) {
+  left: 25%;
+  bottom: 50%;
+}
+main span:nth-child(7) {
+  left: 23%;
+  bottom: 56.1%;
+}
+
+.ear {
+  --size: 5%;
+  position: absolute;
+  background-color: var(--skin-shadow);
+  border-radius: 50%;
+  height: var(--size);
+  width: var(--size);
+  bottom: 44.3%;
+  left: 27%;
+}
+.body {
+  position: absolute;
+  background-color: pink;
+  width: 30%;
+  height: 20%;
+  border-top-left-radius: calc(var(--canvas-size) / 10);
+  border-top-right-radius: calc(var(--canvas-size) / 10);
+  left: 25%;
+  bottom: 10%;
+}
+.spec {
+  position: absolute;
+  /* background-color: red; */
+  height: 8%;
+  width: 16%;
+  top: 47%;
+  left: 38%;
+}
+.glass-connect {
+  position: absolute;
+  height: 50%;
+  width: 25%;
+  border: solid 5px var(--grey-spec);
+  border-radius: 50%;
+  left: 42.8%;
+  top: 20%;
+  border-bottom-color: transparent;
+}
+.glass-left,
+.glass-right {
+  /* --size: 100%; */
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--blue-glass);
+  height: 100%;
+  width: 50%;
+  border: solid 5px var(--grey-spec);
+}
+.glass-left {
+}
+.glass-right {
+  left: 60%;
+}
