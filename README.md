@@ -8,3 +8,5 @@ All my CodePen CSS ART are available here!!
 - [ ] GoLang logo
 - [ ] Appwrte 3D toggle idea
 - [ ] 3D Boy animation
+- [ ] Atoms orbital periodic table
+- [ ] Social revolving around pic on click
