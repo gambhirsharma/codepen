@@ -12,3 +12,4 @@ All my CodePen CSS ART are available here!!
 - [ ] Social revolving around pic on click
 - [ ] Danny Fenton noHTML
 - [ ] Bunny noHTML
+- [ ] Toggle animation
