@@ -13,3 +13,4 @@ All my CodePen CSS ART are available here!!
 - [ ] Danny Fenton noHTML
 - [ ] Bunny noHTML
 - [ ] Toggle animation
+- [ ] Loading animation
