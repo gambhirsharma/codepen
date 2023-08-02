@@ -14,3 +14,5 @@ All my CodePen CSS ART are available here!!
 - [ ] Bunny noHTML
 - [ ] Toggle animation
 - [ ] Loading animation
+- [ ] Apple photo logo
+- [ ] google photo logo
